@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { DollarSign, PiggyBank, Percent, Activity, TrendingUp } from 'lucide-react';
-import { formatCurrency, formatPercent, getScoreColor } from '../../lib/utils';
+import { getScoreColor } from '../../lib/utils';
 import type { DashboardResponse } from '../../types';
 import { useEffect, useState } from 'react';
 
@@ -32,12 +32,12 @@ function AnimatedCounter({ value, prefix = '', suffix = '', duration = 1.2 }: {
 }
 
 const CARDS = [
-  { key: 'monthlySpend', label: 'Monthly Spend', icon: DollarSign, prefix: '$', color: 'text-zinc-100' },
-  { key: 'potentialSavings', label: 'Potential Savings', icon: PiggyBank, prefix: '$', color: 'text-emerald-400' },
-  { key: 'savingsPercentage', label: 'Savings %', icon: Percent, suffix: '%', color: 'text-emerald-400' },
-  { key: 'finOpsScore', label: 'FinOps Score', icon: Activity, suffix: '/100', color: 'dynamic' },
-  { key: 'forecastedSpend', label: 'Forecasted Spend', icon: TrendingUp, prefix: '$', color: 'text-amber-400' },
-] as const;
+  { key: 'monthlySpend', label: 'Monthly Spend', icon: DollarSign, prefix: '$', suffix: undefined, color: 'text-zinc-100' },
+  { key: 'potentialSavings', label: 'Potential Savings', icon: PiggyBank, prefix: '$', suffix: undefined, color: 'text-emerald-400' },
+  { key: 'savingsPercentage', label: 'Savings %', icon: Percent, prefix: undefined, suffix: '%', color: 'text-emerald-400' },
+  { key: 'finOpsScore', label: 'FinOps Score', icon: Activity, prefix: undefined, suffix: '/100', color: 'dynamic' },
+  { key: 'forecastedSpend', label: 'Forecasted Spend', icon: TrendingUp, prefix: '$', suffix: undefined, color: 'text-amber-400' },
+];
 
 export function SummaryCards({ data }: { data: DashboardResponse }) {
   return (

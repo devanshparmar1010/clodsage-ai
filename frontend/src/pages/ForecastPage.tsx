@@ -6,7 +6,7 @@ import { LoadingState } from '../components/shared/LoadingState';
 import { EmptyState } from '../components/shared/EmptyState';
 import { ErrorState } from '../components/shared/ErrorState';
 import { useForecast } from '../hooks/useAnalytics';
-import { formatCurrency, formatPercent, getScoreColor } from '../lib/utils';
+import { formatCurrency, formatPercent } from '../lib/utils';
 
 export default function ForecastPage() {
   const { data, isLoading, isError, error, refetch } = useForecast();
@@ -26,6 +26,7 @@ export default function ForecastPage() {
   const isGrowing = data.growthRate > 0;
   const TrendIcon = isGrowing ? TrendingUp : TrendingDown;
   const trendColor = isGrowing ? '#f59e0b' : '#059669';
+  void trendColor;
 
   return (
     <>
@@ -91,7 +92,7 @@ export default function ForecastPage() {
               <YAxis axisLine={false} tickLine={false} tick={{ fill: '#52525b', fontSize: 11 }} tickFormatter={(v) => `$${(v / 1000).toFixed(0)}k`} />
               <Tooltip
                 contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', fontSize: '12px' }}
-                formatter={(val: number) => [formatCurrency(val), '']}
+                formatter={(val: unknown) => [formatCurrency(val as number), '']}
               />
               <Area type="monotone" dataKey="upper" stroke="none" fill="url(#confGrad)" />
               <Area type="monotone" dataKey="lower" stroke="none" fill="#09090b" />

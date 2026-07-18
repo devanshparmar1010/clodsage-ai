@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import type { ForecastResponse } from '../../types';
 import { formatCurrency } from '../../lib/utils';
 
@@ -40,7 +40,7 @@ export function SpendTrendChart({ data }: { data: ForecastResponse }) {
           <Tooltip
             contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', fontSize: '12px' }}
             labelStyle={{ color: '#a1a1aa' }}
-            formatter={(val: number) => [formatCurrency(val), 'Spend']}
+            formatter={(val: unknown) => [formatCurrency(val as number), 'Spend']}
           />
           <Area type="monotone" dataKey="spend" stroke="#3b82f6" strokeWidth={2} fill="url(#spendGrad)" dot={{ fill: '#3b82f6', r: 4 }} />
         </AreaChart>

@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useLocation } from 'react-router-dom';
 import { api } from '../services/api';
-import type { UploadResponse } from '../types';
+import type { UploadResponse, ScoreCategory } from '../types';
 
 export function useDashboard() {
   const location = useLocation();
@@ -55,7 +55,7 @@ export function useScore() {
     queryKey: ['score', isLive, dashboard.data?.finOpsScore],
     queryFn: isLive ? async () => {
       const scoreVal = dashboard.data?.finOpsScore || 85;
-      const category = scoreVal >= 90 ? 'Excellent' : scoreVal >= 75 ? 'Healthy' : scoreVal >= 50 ? 'Needs Optimization' : 'Critical';
+      const category: ScoreCategory = scoreVal >= 90 ? 'Excellent' : scoreVal >= 75 ? 'Healthy' : scoreVal >= 50 ? 'Needs Optimization' : 'Critical';
       return {
         score: scoreVal,
         category,

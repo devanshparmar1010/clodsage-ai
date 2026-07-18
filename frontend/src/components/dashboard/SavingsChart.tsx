@@ -36,7 +36,7 @@ export function SavingsChart({ recommendations }: { recommendations: Recommendat
           <YAxis hide />
           <Tooltip
             contentStyle={{ backgroundColor: '#18181b', border: '1px solid #27272a', borderRadius: '8px', fontSize: '12px' }}
-            formatter={(val: number) => [formatCurrency(val), 'Annual Savings']}
+            formatter={(val: unknown) => [formatCurrency(val as number), 'Annual Savings']}
           />
           <Bar dataKey="savings" radius={[6, 6, 0, 0]}>
             {chartData.map((entry) => (

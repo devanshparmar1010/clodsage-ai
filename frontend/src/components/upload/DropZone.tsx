@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Upload, FileCheck, AlertCircle, X } from 'lucide-react';
 import { cn } from '../../lib/utils';
 

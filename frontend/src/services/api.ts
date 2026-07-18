@@ -2,6 +2,7 @@ import type {
   ChatResponse,
   DashboardResponse,
   Recommendation,
+  Resource,
   ResourceCollection,
   ForecastResponse,
   ScoreResponse,
@@ -12,9 +13,13 @@ import type {
 const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
 class ApiError extends Error {
-  constructor(public code: string, message: string, public status: number) {
+  code: string;
+  status: number;
+  constructor(code: string, message: string, status: number) {
     super(message);
     this.name = 'ApiError';
+    this.code = code;
+    this.status = status;
   }
 }
 
