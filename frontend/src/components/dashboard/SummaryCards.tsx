@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { DollarSign, PiggyBank, Percent, Activity, TrendingUp } from 'lucide-react';
 import { getScoreColor } from '../../lib/utils';
 import type { DashboardResponse } from '../../types';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 function AnimatedCounter({ value, prefix = '', suffix = '', duration = 1.2 }: {
   value: number; prefix?: string; suffix?: string; duration?: number;
@@ -31,12 +31,12 @@ function AnimatedCounter({ value, prefix = '', suffix = '', duration = 1.2 }: {
   return <span>{formatted}</span>;
 }
 
-const CARDS = [
-  { key: 'monthlySpend', label: 'Monthly Spend', icon: DollarSign, prefix: '$', suffix: undefined, color: 'text-zinc-100' },
-  { key: 'potentialSavings', label: 'Potential Savings', icon: PiggyBank, prefix: '$', suffix: undefined, color: 'text-emerald-400' },
-  { key: 'savingsPercentage', label: 'Savings %', icon: Percent, prefix: undefined, suffix: '%', color: 'text-emerald-400' },
-  { key: 'finOpsScore', label: 'FinOps Score', icon: Activity, prefix: undefined, suffix: '/100', color: 'dynamic' },
-  { key: 'forecastedSpend', label: 'Forecasted Spend', icon: TrendingUp, prefix: '$', suffix: undefined, color: 'text-amber-400' },
+const CARDS: { key: keyof DashboardResponse & ('monthlySpend' | 'potentialSavings' | 'savingsPercentage' | 'finOpsScore' | 'forecastedSpend'); label: string; icon: React.ElementType; prefix?: string; suffix?: string; color: string }[] = [
+  { key: 'monthlySpend', label: 'Monthly Spend', icon: DollarSign, prefix: '$', color: 'text-zinc-100' },
+  { key: 'potentialSavings', label: 'Potential Savings', icon: PiggyBank, prefix: '$', color: 'text-emerald-400' },
+  { key: 'savingsPercentage', label: 'Savings %', icon: Percent, suffix: '%', color: 'text-emerald-400' },
+  { key: 'finOpsScore', label: 'FinOps Score', icon: Activity, suffix: '/100', color: 'dynamic' },
+  { key: 'forecastedSpend', label: 'Forecasted Spend', icon: TrendingUp, prefix: '$', color: 'text-amber-400' },
 ];
 
 export function SummaryCards({ data }: { data: DashboardResponse }) {
