@@ -1,0 +1,11 @@
+db_id,instance_class,engine,cpu_avg,memory_avg,connections_avg,monthly_cost
+db-prod-primary,db.r5.4xlarge,PostgreSQL,28.4,35.2,185,2920.32
+db-prod-replica-01,db.r5.4xlarge,PostgreSQL,8.6,12.1,42,2920.32
+db-prod-replica-02,db.r5.2xlarge,PostgreSQL,5.3,9.7,18,1460.16
+db-analytics-warehouse,db.r5.2xlarge,PostgreSQL,14.2,24.8,65,1460.16
+db-staging-01,db.r5.xlarge,PostgreSQL,3.8,6.2,8,730.08
+db-dev-shared,db.r5.xlarge,MySQL,2.1,4.5,3,730.08
+db-legacy-app,db.m5.2xlarge,MySQL,6.7,11.3,12,1168.13
+db-reporting,db.r5.xlarge,PostgreSQL,18.5,22.4,34,730.08
+db-cache-sessions,db.r5.large,Redis,42.1,55.8,210,365.04
+db-old-prototype,db.r5.xlarge,PostgreSQL,0.4,1.2,0,730.08

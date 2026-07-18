@@ -1,0 +1,12 @@
+bucket_name,region,size_tb,object_count,last_access_days,storage_class,monthly_cost
+prod-user-uploads,us-east-1,4.5,3100000,2,STANDARD,103.50
+prod-media-assets,us-east-1,8.9,5600000,4,STANDARD,204.70
+prod-logs-archive,us-east-1,12.3,18200000,95,GLACIER,12.30
+prod-data-lake,us-east-1,22.1,42000000,10,STANDARD,508.30
+staging-artifacts,us-east-1,1.4,420000,15,STANDARD_IA,9.24
+analytics-exports,us-east-1,6.4,3200000,25,STANDARD,147.20
+backup-daily-snapshots,us-east-1,15.6,8900000,180,DEEP_ARCHIVE,6.24
+compliance-records-2019,us-east-1,2.4,1600000,540,DEEP_ARCHIVE,0.96
+ml-training-datasets,us-west-2,9.8,4100000,6,STANDARD,225.40
+customer-reports,us-east-1,1.1,340000,12,STANDARD,25.30
+video-transcoding-cache,us-west-2,2.1,600000,8,STANDARD,48.30

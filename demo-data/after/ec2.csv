@@ -1,0 +1,15 @@
+instance_id,instance_name,instance_type,region,cpu_avg,memory_avg,hours_running,monthly_cost,environment
+i-0a1b2c3d4e5f60001,web-prod-01,m5.xlarge,us-east-1,38.6,42.1,720,142.08,production
+i-0a1b2c3d4e5f60002,web-prod-02,m5.xlarge,us-east-1,32.4,38.5,720,142.08,production
+i-0a1b2c3d4e5f60003,api-prod-01,c5.2xlarge,us-east-1,52.8,48.6,720,244.80,production
+i-0a1b2c3d4e5f60004,api-prod-02,c5.2xlarge,us-east-1,45.2,43.1,720,244.80,production
+i-0a1b2c3d4e5f60006,batch-worker-01,m5.xlarge,us-east-1,55.4,48.2,520,103.01,production
+i-0a1b2c3d4e5f60009,analytics-gpu-01,g4dn.xlarge,us-east-1,62.3,58.1,380,150.48,production
+i-0a1b2c3d4e5f60010,ml-training-01,g4dn.xlarge,us-west-2,71.2,65.8,420,166.32,production
+i-0a1b2c3d4e5f60011,staging-web-01,t3.medium,us-east-1,28.4,32.5,520,21.53,staging
+i-0a1b2c3d4e5f60012,staging-api-01,t3.large,us-east-1,35.6,28.9,520,42.66,staging
+i-0a1b2c3d4e5f60013,dev-sandbox-01,t3.medium,us-east-1,24.8,22.1,260,10.76,development
+i-0a1b2c3d4e5f60015,legacy-monolith-01,r5.xlarge,us-east-1,42.1,55.4,720,182.40,production
+i-0a1b2c3d4e5f60016,jenkins-ci-01,c5.xlarge,us-east-1,48.2,52.3,520,89.49,tools
+i-0a1b2c3d4e5f60017,monitoring-01,t3.xlarge,us-east-1,42.8,48.6,720,121.47,production
+i-0a1b2c3d4e5f60018,cache-redis-01,r5.xlarge,us-east-1,38.5,62.1,720,182.40,production
